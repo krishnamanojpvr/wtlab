@@ -32,8 +32,6 @@ function sendConfirmationEmail(username) {
         resolve(`Email sent to ${username}`);
       } else {
         reject(`Failed to send email to ${username}.`);
-
-        35;
       }
     }, 500);
   });
