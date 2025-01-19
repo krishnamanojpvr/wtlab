@@ -1,2 +1,0 @@
-10a. 
-Create a student database in Mongo DB with all the details of students of a class. 

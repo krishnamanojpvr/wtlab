@@ -1,3 +1,13 @@
+// 13. 
+// You are given two sorted arrays, arr1 and arr2. Your task is to merge these two arrays into a single sorted 
+// array. Both input arrays are already sorted in non-decreasing order. The output should also be a sorted array 
+// that contains all elements from both arr1 and arr2. 
+// Sample Input: 
+// 1 3 5 
+// 2 4 6 
+// Sample Output: 
+// 1 2 3 4 5 6 
+
 const readline = require("readline"); // Set up readline interface for reading input
 const rl = readline.createInterface({
   input: process.stdin,

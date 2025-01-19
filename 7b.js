@@ -1,3 +1,5 @@
+// 7b. 
+// Write a JavaScript program to implement Bubble Sort. 
 function bubbleSort(arr) {
   let n = arr.length;
   let swapped;

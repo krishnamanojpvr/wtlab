@@ -1,3 +1,11 @@
+// 14. 
+// You are given a collection of books objects in a library. Request the user's library ID and assist them in 
+// determining whether the book is available at the library. 
+// Sample Input 1: 
+// 5 
+// Sample Output 1: 
+// Book with libraryId 5 : 'The Old Man and the Sea' by 'Ernest Hemingway' is available.
+
 let library = [
   {
     title: "The Great Gatsby",

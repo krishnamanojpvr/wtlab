@@ -1,3 +1,6 @@
+// 9b. 
+// Write a NodeJS program to read from a file and display the content on screen.
+
 const fs = require("fs");
 const path = require("path");
 

@@ -1,2 +1,0 @@
-6a. 
-Write a JavaScript program to perform a binary search. 

@@ -1,3 +1,7 @@
+// 5a .  
+// Write a JavaScript program which accepts a string as input and swap the case of each character. For example, 
+// if you input 'The Quick Brown Fox' the output should be 'tHEqUICKbROWNfOX'.  
+
 function swapCase(inputString) {
   let swappedString = "";
   for (let i = 0; i < inputString.length; i++) {

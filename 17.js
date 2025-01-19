@@ -1,3 +1,13 @@
+// 17. 
+// Group People by Age Using reduce(). Task: Given an array of people, group them by their ages. 
+// Output: 
+// {  
+//     '21': [ 'Alice', 'Charlie', 'Frank' ],                                         
+//     '22': [ 'Bob', 'David', 'Ivy' ],                                               
+//     '23': [ 'Eve', 'Grace' ],                                                      
+//     '24': [ 'Hank' ]  
+// }                
+
 const users = [
   { name: "Alice", age: 21 },
   { name: "Bob", age: 22 },

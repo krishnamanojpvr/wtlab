@@ -1,3 +1,9 @@
+// 15. 
+// Convert an Array of Objects to an Array of Strings Using map(). 
+// Task: You have an array of user objects, and you need to create an array of their names. 
+//output 
+// ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Hank', 'Ivy']
+
 const users = [
   { name: "Alice", age: 21 },
   { name: "Bob", age: 22 },

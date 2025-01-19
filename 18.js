@@ -1,3 +1,20 @@
+// 18. 
+// You are tasked with simulating an ice cream production process using JavaScript.  
+// The user will select a fruit, holder, and topping, and the program will simulate  
+// the production process with specific delays for each step. 
+// Input: 
+// A fruit (e.g., "apple"). 
+// A holder (e.g., "cup"). 
+// A topping (e.g., "chocolate"). 
+// Ouptut: (i.e., the following production steps are executed with delays:) 
+// 1. Production starts immediately. 
+// 2. After 1 second: The fruit is chopped. 
+// 3. After 1 second: Liquid (water and ice) is added. 
+// 4. After 2 seconds: The machine starts. 
+// 5. After 2 seconds: Ice cream is placed in the holder. 
+// 6. After 3 seconds: Topping is added. 
+// 7. After 2 seconds: Ice cream is served.
+
 const readline = require("readline");
 let stocks = {
   Fruits: ["strawberry", "grapes", "banana", "apple"],

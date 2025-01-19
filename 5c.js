@@ -1,5 +1,6 @@
+// 5c. 
+// Write a JavaScript program to remove duplicate items from an array 
 //option 1
-
 function removeDuplicates(arr) {
   return arr.filter((value, index, self) => {
     return self.indexOf(value) === index;

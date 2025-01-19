@@ -1,3 +1,6 @@
+// 6a. 
+// Write a JavaScript program to perform a binary search. 
+
 function binarySearch(arr, target) {
   let start = 0;
   let end = arr.length - 1;

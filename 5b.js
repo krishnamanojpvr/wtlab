@@ -1,3 +1,5 @@
+// 5b. 
+// Write a JavaScript program to find the most frequent item of an array. 
 function findMostFrequent(arr) {
   const frequencyMap = {};
   let maxFrequency = 0;

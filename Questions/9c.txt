@@ -1,3 +1,0 @@
-9c. 
-Write a NodeJS program to accept a file name from user, text from user, if file exists append the text to the 
-file. If not create a new file and add the text to it.

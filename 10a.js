@@ -1,3 +1,6 @@
+// 10a. 
+// Create a student database in Mongo DB with all the details of students of a class. 
+
 // use school;
 //switched to db school and created collection students
 db = db.getSiblingDB("school"); // Switch to the 'school' database
