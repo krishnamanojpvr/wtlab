@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Details</title>
+    <script>
+      function fetchStudentDetails() {
+        // Get roll number from input
+        const rollNumber = document.getElementById("rollNumber").value;
+        const resultDiv = document.getElementById("result");
+
+        if (rollNumber.trim() === "") {
+          resultDiv.innerHTML = "Please enter a roll number.";
+          return;
+        }
+        // Send a GET request to fetch student details
+        fetch(`http://localhost:5000/api/student/${rollNumber}`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.message) {
+              resultDiv.innerHTML = data.message;
+            } else {
+              // Display student details
+              resultDiv.innerHTML = ` 
+              <h2>Student Details</h2> 
+              <p><strong>Name:</strong> ${data.name}</p> 
+              <p><strong>Age:</strong> ${data.age}</p> 
+              <p><strong>Gender:</strong> ${data.gender}</p> 
+               <p><strong>Roll Number:</strong> ${data.rollNumber}</p> 
+              <p><strong>Subjects:</strong> ${data.subjects.join(", ")}</p> 
+              <p><strong>Address:</strong> ${data.address.street}, ${
+                data.address.city
+              }, ${data.address.zip}</p> 
+            `;
+            }
+          })
+          .catch((err) => {
+            resultDiv.innerHTML =
+              "Error fetching student details. Please try again later.";
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Fetch Student Details</h1>
+    <form onsubmit="event.preventDefault(); fetchStudentDetails();">
+      <label for="rollNumber">Enter Roll Number:</label>
+      <input type="text" id="rollNumber" name="rollNumber" required />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result" style="margin-top: 20px"></div>
+  </body>
+</html>

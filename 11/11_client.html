@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student CRUD</title>
+    <script>
+      async function createStudent() {
+        const studentData = {
+          name: document.getElementById("name").value,
+          age: document.getElementById("age").value,
+          gender: document.getElementById("gender").value,
+          rollNumber: document.getElementById("rollNumber").value,
+          subjects: document.getElementById("subjects").value.split(","),
+          address: {
+            street: document.getElementById("street").value,
+            city: document.getElementById("city").value,
+            zip: document.getElementById("zip").value,
+          },
+        };
+
+        const response = await fetch("http://localhost:5000/api/students", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(studentData),
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+      }
+
+      async function getStudent() {
+        const rollNumber = document.getElementById("getRollNumber").value;
+        const response = await fetch(
+          `http://localhost:5000/api/students/${rollNumber}`
+        );
+        const result = await response.json();
+
+        if (result.message) {
+          alert(result.message);
+        } else {
+          document.getElementById("studentDetails").innerHTML = ` 
+          <h2>Student Details</h2> 
+          <p><strong>Name:</strong> ${result.name}</p> 
+          <p><strong>Age:</strong> ${result.age}</p> 
+          <p><strong>Gender:</strong> ${result.gender}</p> 
+          <p><strong>Roll Number:</strong> ${result.rollNumber}</p> 
+          <p><strong>Subjects:</strong> ${result.subjects.join(", ")}</p> 
+          <p><strong>Address:</strong> ${result.address.street}, ${
+            result.address.city
+          }, ${result.address.zip}</p> 
+        `;
+        }
+      }
+
+      async function updateStudent() {
+        const rollNumber = document.getElementById("updateRollNumber").value;
+        const studentData = {
+          name: document.getElementById("updateName").value,
+          age: document.getElementById("updateAge").value,
+          gender: document.getElementById("updateGender").value,
+          subjects: document.getElementById("updateSubjects").value.split(","),
+          address: {
+            street: document.getElementById("updateStreet").value,
+            city: document.getElementById("updateCity").value,
+
+            zip: document.getElementById("updateZip").value,
+          },
+        };
+
+        const response = await fetch(
+          `http://localhost:5000/api/students/${rollNumber}`,
+          {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(studentData),
+          }
+        );
+
+        const result = await response.json();
+        alert(result.message);
+      }
+
+      async function deleteStudent() {
+        const rollNumber = document.getElementById("deleteRollNumber").value;
+        const response = await fetch(
+          `http://localhost:5000/api/students/${rollNumber}`,
+          {
+            method: "DELETE",
+          }
+        );
+
+        const result = await response.json();
+        alert(result.message);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Student CRUD Operations</h1>
+
+    <h2>Create Student</h2>
+    <form onsubmit="event.preventDefault(); createStudent();">
+      <label for="name">Name:</label><br />
+
+      <input type="text" id="name" required /><br />
+
+      <label for="age">Age:</label><br />
+      <input type="number" id="age" required /><br />
+
+      <label for="gender">Gender:</label><br />
+      <input type="text" id="gender" required /><br />
+
+      <label for="rollNumber">Roll Number:</label><br />
+      <input type="text" id="rollNumber" required /><br />
+
+      <label for="subjects">Subjects (comma separated):</label><br />
+      <input type="text" id="subjects" required /><br />
+
+      <label for="street">Street:</label><br />
+      <input type="text" id="street" required /><br />
+
+      <label for="city">City:</label><br />
+      <input type="text" id="city" required /><br />
+
+      <label for="zip">Zip:</label><br />
+      <input type="text" id="zip" required /><br />
+
+      <button type="submit">Create Student</button>
+    </form>
+
+    <h2>Get Student Details</h2>
+    <form onsubmit="event.preventDefault(); getStudent();">
+      <label for="getRollNumber">Roll Number:</label><br />
+      <input type="text" id="getRollNumber" required /><br />
+      <button type="submit">Get Details</button>
+    </form>
+
+    <div id="studentDetails"></div>
+
+    <h2>Update Student</h2>
+    <form onsubmit="event.preventDefault(); updateStudent();">
+      <label for="updateRollNumber">Roll Number:</label><br />
+      <input type="text" id="updateRollNumber" required /><br />
+
+      <label for="updateName">Name:</label><br />
+      <input type="text" id="updateName" required /><br />
+
+      <label for="updateAge">Age:</label><br />
+      <input type="number" id="updateAge" required /><br />
+
+      <label for="updateGender">Gender:</label><br />
+      <input type="text" id="updateGender" required /><br />
+
+      <label for="updateSubjects">Subjects (comma separated):</label><br />
+      <input type="text" id="updateSubjects" required /><br />
+
+      <label for="updateStreet">Street:</label><br />
+      <input type="text" id="updateStreet" required /><br />
+
+      <label for="updateCity">City:</label><br />
+      <input type="text" id="updateCity" required /><br />
+
+      <label for="updateZip">Zip:</label><br />
+      <input type="text" id="updateZip" required /><br />
+
+      <button type="submit">Update Student</button>
+    </form>
+
+    <h2>Delete Student</h2>
+    <form onsubmit="event.preventDefault(); deleteStudent();">
+      <label for="deleteRollNumber">Roll Number:</label><br />
+      <input type="text" id="deleteRollNumber" required /><br />
+      <button type="submit">Delete Student</button>
+    </form>
+  </body>
+</html>

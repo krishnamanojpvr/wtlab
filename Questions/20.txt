@@ -1,0 +1,9 @@
+20. 
+Create an html page and js file as described below. 
+Problem Statement: Basic Web Server with Routing in Node.js 
+You are tasked with creating a simple Node.js web server that serves different  
+pages based on the URL path.  
+The server should: Serve an HTML page with a dynamic message in the content. 
+Handle routes for:  
+    => Products page: Display the products as shown in the class. 
+Use the http module for server creation and fs module to read the HTML file. 

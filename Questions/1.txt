@@ -1,0 +1,19 @@
+1. 
+Design the food blog webpage using only HTML elements 
+The webpage is divided into several sections  
+1. Hyper Link 1: "Welcome to My Food Blog" - This is the main title of the blog. 
+2. Hyper Link 2:  "About Me" - This section introduces the blog author. Place the content about the author. 
+3. List 1: "Latest Posts" - This section lists the most recent blog posts. 
+4. List 2: "Popular Recipes" - This section lists popular recipes with links. 
+5. Hyper Link 3: "Contact Me" - This section provides a way for visitors to contact the author. 
+6. Hyper Link 4: "Subscribe to My Blog" - This section includes a HTML form for visitors to subscribe to the blog. 
+Requirements to implement 
+1: Update Content 
+Update the "Latest Posts" section by adding a new blog post titled "Healthy Salads for Every Day". Provide a brief description and a link to 
+"salad-recipes.html".` 
+2: Add a New Section 
+ Add a new section titled "Upcoming Events" after the "Subscribe to My Blog" section. List at least two events with their descriptions. 
+3: Create a Link 
+ Create a hyperlink in the "About Me" section that links to the homepage of the blog. Use the text "Back to Home". 
+ 4: Update Form Elements 
+ Modify the subscription form so that the email field is required and includes basic validation for email format.

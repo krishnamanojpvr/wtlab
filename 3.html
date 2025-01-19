@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Food Blog</title>
+    <style>
+      html {
+        scroll-padding-top: 6em;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+      header {
+        background: lightblue;
+        color: #333;
+        padding: 0.5em;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+      header h1 {
+        animation: scroll 10s linear infinite;
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      nav ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+      nav ul li a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      #about-me {
+        padding-top: 3em;
+        margin-top: 10em;
+      }
+      section {
+        padding: 2em 1.5em;
+        margin: 6em auto 2em auto;
+        background: white;
+        border-radius: 5px;
+        max-width: 90%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      section h2 {
+        font-size: 1.8em;
+        color: #333;
+        border-bottom: 2px solid lightblue;
+        padding-bottom: 0.3em;
+        margin-bottom: 1em;
+        text-align: center;
+      }
+      section p,
+      section ul {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #555;
+        text-align: justify;
+      }
+      .recipe-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+      }
+      .recipe-card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background: #fff;
+        text-align: center;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .recipe-card img {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+      }
+      .recipe-card h4 {
+        font-size: 1.1em;
+      }
+      .recipe-card a {
+        color: white;
+        background: lightblue;
+        padding: 5px 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+      footer {
+        text-align: center;
+        padding: 1em;
+        background: #333;
+        color: white;
+      }
+      @media (min-width: 768px) {
+        .recipe-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <h1>Welcome to My Food Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="#about-me">About Me</a></li>
+          <li><a href="#latest-posts">Latest Posts</a></li>
+          <li><a href="#popular-recipes">Popular Recipes</a></li>
+          <li><a href="#contact-me">Contact Me</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- About Me Section -->
+    <section id="about-me">
+      <h2>About Me</h2>
+
+      13
+
+      <p>
+        Hello! I’m the author of this blog. I love cooking and sharing my
+        favorite recipes with the world. Join me as I explore delightful
+        culinary adventures!
+      </p>
+    </section>
+    <!-- Latest Posts Section -->
+    <section id="latest-posts">
+      <h2>Latest Posts</h2>
+      <ul>
+        <li>
+          <a href="salad-recipes.html">Healthy Salads for Every Day</a> -
+          Discover quick and easy salad recipes for a healthy lifestyle.
+        </li>
+        <li>
+          <a href="soup-recipes.html">Comforting Soups for Cold Days</a> - Warm
+          up with these hearty soup recipes.
+        </li>
+        <li>
+          <a href="dessert-recipes.html">Sweet Treats to Savor</a> - Indulge in
+          these delightful dessert recipes.
+        </li>
+      </ul>
+    </section>
+    <!-- Popular Recipes Section -->
+    <section id="popular-recipes">
+      <h2>Popular Recipes</h2>
+      <div class="recipe-container">
+        <div class="recipe-card">
+          <img src="recipe1.jpg" alt="Spaghetti Carbonara" />
+          <h4>RECIPE 1: Spaghetti Carbonara</h4>
+          <p>A classic and creamy dish to satisfy cravings.</p>
+          <a href="#">Link to Recipe</a>
+        </div>
+        <div class="recipe-card">
+          <img src="recipe2.jpg" alt="Chicken Rolls" />
+          <h4>RECIPE 2: Chicken Rolls</h4>
+          <p>A tasty and satisfying recipe for all occasions.</p>
+          <a href="#">Link to Recipe</a>
+        </div>
+        <div class="recipe-card">
+          <img src="recipe3.jpg" alt="Vegetarian Tacos" />
+          <h4>RECIPE 3: Vegetarian Tacos</h4>
+          <p>Healthy and vibrant tacos for vegetarians.</p>
+
+          <a href="#">Link to Recipe</a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Me Section -->
+    <section id="contact-me">
+      <h2>Contact Me</h2>
+      <p>
+        If you have any questions or suggestions, feel free to
+        <a href="mailto:author@myfoodblog.com">email me</a>.
+      </p>
+    </section>
+    <!-- Subscribe Section -->
+    <section id="subscribe">
+      <h2>Subscribe to My Blog!</h2>
+      <form novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required /><br /><br />
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" required /><br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required /><br /><br />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    <!-- Footer Section -->
+    <footer>
+      <p>
+        &copy;
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        My Food Blog. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display JSON Data in Table</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JSON Data Table</h1>
+    <table id="data-table">
+      <thead>
+        <tr id="table-header"></tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+    <script>
+      const jsonData = [
+        { id: 1, name: "John Doe", age: 28, email: "john.doe@example.com" },
+        { id: 2, name: "Jane Smith", age: 34, email: "jane.smith@example.com" },
+        {
+          id: 3,
+          name: "Samuel Johnson",
+          age: 25,
+          email: "samuel.johnson@example.com",
+        },
+      ]; // Function to generate the table
+      function generateTable(data) {
+        // Get the table header and body elements
+        const tableHeader = document.getElementById("table-header");
+        const tableBody = document.getElementById("table-body"); // If there is data, generate the header
+        if (data.length > 0) {
+          // Generate table headers dynamically based on the keys in first object of data array
+          const headers = Object.keys(data[0]);
+          headers.forEach((header) => {
+            const th = document.createElement("th");
+            th.textContent = header.charAt(0).toUpperCase() + header.slice(1); // Capitalize first letter
+            tableHeader.appendChild(th);
+          }); // Generate table rows dynamically based on the data
+          data.forEach((item) => {
+            const tr = document.createElement("tr");
+            headers.forEach((header) => {
+              const td = document.createElement("td");
+              td.textContent = item[header]; // Get value for each column
+              tr.appendChild(td);
+            });
+            tableBody.appendChild(tr);
+          });
+        }
+      } // Call the function to populate the table directly
+      generateTable(jsonData);
+    </script>
+  </body>
+</html>
